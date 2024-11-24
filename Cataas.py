@@ -3,7 +3,7 @@ from PIL import Image, ImageTk
 import requests
 from io import BytesIO
 
-def load_image():
+def load_image(url):
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -14,8 +14,8 @@ def load_image():
         print(f"Произошла ошибка: {e}")
         return None
 
-window = TK()
-window.tittle("Cats!")
+window = Tk()
+window.title("Cats!")
 window.geometry("600x480")
 
 label = Label()
