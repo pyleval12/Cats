@@ -34,7 +34,7 @@ main_menu = Menu(window)
 window.config(menu=main_menu)
 file_menu = Menu(main_menu, tearoff = 0)
 
-main_menu.add_cascade(label="Update", menu =file_menu)
+main_menu.add_cascade(label="Обновить", menu =file_menu)
 file_menu.add_command(label="Загрузить фото", command = set_image)
 file_menu.add_separator()
 file_menu.add_command(label="Выход", command = exit)
