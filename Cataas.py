@@ -27,8 +27,11 @@ window = Tk()
 window.title("Cats!")
 window.geometry("600x520")
 
-update_button = Button(text="Обновить", command = set_image)
-update_button.pack()
+main_menu = Menu()
+main_menu.add_cascade(label="Update", command=set_image)
+
+#update_button = Button(text="Обновить", command = set_image)
+#update_button.pack()
 label = Label()
 label.pack()
 
@@ -36,5 +39,5 @@ url = "https://cataas.com/cat"
 
 set_image()
 
-
+window.config(menu=main_menu)
 window.mainloop()
