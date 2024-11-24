@@ -10,13 +10,14 @@ def load_image(url):
         response.raise_for_status()
         image_data = BytesIO(response.content)
         img = Image.open(image_data)
+        img.thumbnail((600,480), Image.Resampling.LANCZOS)
         return ImageTk.PhotoImage(img)
     except Exception as e:
         print(f"Произошла ошибка: {e}")
         return None
 
 def set_image():
-    global url
+    #global url
     img = load_image(url)
     if img:
         label.config(image=img)
@@ -24,7 +25,7 @@ def set_image():
 
 window = Tk()
 window.title("Cats!")
-window.geometry("600x480")
+window.geometry("600x520")
 
 update_button = Button(text="Обновить", command = set_image)
 update_button.pack()
